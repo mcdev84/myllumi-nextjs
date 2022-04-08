@@ -22,7 +22,7 @@ export default function Main () {
 				<InitialText gridArea={ 'init' }>Choose your role</InitialText>
 				<ProfessionalButton gridArea={ 'pro' }><p>Professional</p></ProfessionalButton>
 				<ProfessionalButton gridArea={ 'cust' }>
-					<Link href={'/LoginPage'}>
+					<Link href={'/LoginPage'} passHref>
 						<p>Customer</p>
 					</Link>
 

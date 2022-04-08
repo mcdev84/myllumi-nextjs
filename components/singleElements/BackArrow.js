@@ -4,6 +4,7 @@ import {
 	MdOutlineArrowForwardIos,
 }                               from 'react-icons/md'
 import { GenericSectionLayout } from '../../assets/styled-components/styled'
+import Link from 'next/Link'
 
 const BackArrowLayout = styled(GenericSectionLayout)`
 background-color:transparent`
@@ -25,7 +26,8 @@ export const BackArrow = () => {
 	return (
 		<BackArrowLayout gridArea={'backarrow'} gridTArea={`'arrow text'`}>
 			<ArrowIcon/>
-			<BackText>BACK</BackText>
+			<Link href={'/LoginPage'}>
+				<BackText>BACK</BackText></Link>
 		</BackArrowLayout>
 	)
 }

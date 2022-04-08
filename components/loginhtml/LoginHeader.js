@@ -1,5 +1,5 @@
-import styled                from 'styled-components'
-import { Brand, LogoLayout } from '../../assets/styled-components/styled'
+import styled                     from 'styled-components'
+import { Brand, LogoLayoutLogin } from '../../assets/styled-components/styled'
 
 
 const HeaderLayout = styled.header`
@@ -18,11 +18,11 @@ export const LoginHeader = () => {
 
 	return (
 		<HeaderLayout>
-			<LogoLayout>
+			<LogoLayoutLogin>
 				<Brand wid={ '50vw' } maxW={ '500px' } gridArea={ 'brand' }>
 				 myllumi
 				 </Brand>
-			</LogoLayout>
+			</LogoLayoutLogin>
 		</HeaderLayout>
 	)
 }

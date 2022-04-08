@@ -1,8 +1,6 @@
 import styled                   from 'styled-components'
-import { useContext }                       from 'react'
-import { LoginContext }                     from '../hocs/loginContextWrapper'
 import {GenericText, GenericSectionLayout } from '../../assets/styled-components/styled'
-
+import Link from 'next/link'
 
 const ForgotPasswordLinkLayout = styled(GenericSectionLayout)`
   background-color: transparent;
@@ -16,7 +14,8 @@ export const ForgotPasswordLink = () => {
 	return (
 		<ForgotPasswordLinkLayout gridArea={ 'recover' }>
 			<ForgotPasswordLinkText as={ 'a' } href={ '#' }>
-				Forgot password?
+				<Link href={'/ForgotPassword'}><p>Forgot password?</p></Link>
+
 			</ForgotPasswordLinkText>
 		</ForgotPasswordLinkLayout>
 	)

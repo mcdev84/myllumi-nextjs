@@ -1,9 +1,9 @@
-import styled                   from 'styled-components'
-import Link from 'next/link'
+import styled from 'styled-components'
+import Link   from 'next/link'
 import {
 	GenericSectionLayout,
 	GenericText,
-}           from '../../assets/styled-components/styled'
+}             from '../../assets/styled-components/styled'
 
 const SignUpLinkLayout = styled(GenericSectionLayout)`
   background-color: transparent;
@@ -14,12 +14,12 @@ export const SignUpLink = () => {
 
 	return (
 		<SignUpLinkLayout gridArea={ 'signup' }>
-			<SignUpLinkText>
-				Doesn't have an account?
-
-				<a>Sign Up</a>
-
-			</SignUpLinkText>
+			<Link href={ '/SignUpPage' }>
+				<SignUpLinkText>
+					Doesn't have an account?
+					<a>Sign Up</a>
+				</SignUpLinkText>
+			</Link>
 		</SignUpLinkLayout>
 	)
 }

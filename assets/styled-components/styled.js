@@ -10,8 +10,8 @@ export const AppLayout = styled.div`
 	                        "footer";
   grid-template-columns: auto;
   grid-template-rows: minmax(50px, auto) minmax(1fr, auto) minmax(50px, auto);
-  padding: 2rem;
-  grid-gap: 3vw 0
+  /*padding: 2rem;
+  grid-gap: 3vw 0*/
 `
 export const HeaderLayout = styled.header`
   width: 100%;
@@ -34,6 +34,16 @@ export const MainLayout = styled.main`
   grid-template-rows:${ props => props.rows };
   background-color: transparent;
   grid-gap: ${ props => props.gap };
+`
+export const GenericFormLayout = styled.form`
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-area: content;
+  grid-row-gap: 5%;
+  grid-template-columns: .5fr minmax(1fr, 500px) .5fr;
+  grid-template-rows: repeat(7, minmax(30px, 45px));
+  grid-auto-flow: column;
 `
 export const GenericSectionLayout = styled.section`
   width: 100%;
@@ -60,7 +70,6 @@ export const GenericInput = styled.input.attrs(
     outline: transparent;
   }
 `
-
 export const GenericButtonLayout = styled.section`
   width: 100%;
   height: auto;
@@ -77,6 +86,7 @@ export const GenericText = styled.p`
   height: auto;
   display: grid;
   grid-area: ${ props => props.gridArea };
+  grid-template-areas:${ props => props.gridTArea };
   text-align: center;
   font-size: medium;
   font-weight: bold;
@@ -109,13 +119,11 @@ export const FooterLayout = styled.footer`
 export const LogoLayout = styled.section`
   width: fit-content;
   max-width: fit-content;
-  min-width: 200px;
   height: auto;
   max-height: fit-content;
-  min-height: 200px;
   display: grid;
   grid-area: logo;
-  grid-template-columns: minmax(100px, 300px);
+  grid-template-columns:auto;
   grid-template-areas: "brand";
   place-items: center;
   place-self: center;
@@ -127,6 +135,5 @@ export const Brand = styled.h4`
   grid-area: ${ props => props.gridArea };;
   place-items: center;
   color: white;
-  font-size: clamp(2.2rem, 6.75vw, 6.76vw);
   background: radial-gradient(circle at 95.75% 31%, yellow 0, transparent 5%);
 `

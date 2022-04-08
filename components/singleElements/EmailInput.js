@@ -1,11 +1,14 @@
 import styled                   from 'styled-components'
 import { MdEmail }              from 'react-icons/md'
-import { GenericSectionLayout } from '../../assets/styled-components/styled'
+import {
+	GenericInput,
+	GenericSectionLayout,
+} from '../../assets/styled-components/styled'
 
 
 const EmailLayout = styled(GenericSectionLayout)``
 
-const EmailIcon = styled(MdEmail)`
+export const EmailIcon = styled(MdEmail)`
   width: 100%;
   height: auto;
   display: grid;
@@ -21,7 +24,7 @@ export const EmailInput = () => {
 	return (
 		<EmailLayout gridArea={'email'} gridTArea={`'icon input'`}>
 			<EmailIcon/>
-			<input type="email" placeholder="Email address"
+			<GenericInput type="email" gridArea={'input'} placeholder="Email address"
 			       onChange={ (e) => handleEmail(e) }/>
 		</EmailLayout>
 	)
