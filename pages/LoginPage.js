@@ -1,17 +1,21 @@
-import styled                  from 'styled-components'
-import { EmailInput }          from '../components/singleElements/EmailInput'
+import styled                        from 'styled-components'
+import {
+	EmailInput,
+}                                    from '../components/singleElements/EmailInput'
 import {
 	PasswordInput,
-}                              from '../components/singleElements/PasswordInput'
+}                                    from '../components/singleElements/PasswordInput'
 import {
 	SignInButton,
-}                              from '../components/singleElements/SignInButton'
+}                                    from '../components/singleElements/SignInButton'
 import {
 	ForgotPasswordLink,
-}                              from '../components/singleElements/ForgotPasswordLink'
-import { SignUpLink }          from '../components/singleElements/SignUpLink'
-import { LoginHeader }         from '../components/html/LoginHeader'
-import Footer                  from '../components/html/Footer'
+}                                    from '../components/singleElements/ForgotPasswordLink'
+import {
+	SignUpLink,
+}                                    from '../components/singleElements/SignUpLink'
+import { LoginHeader }               from '../components/html/LoginHeader'
+import Footer                        from '../components/html/Footer'
 import {
 	AppLayout,
 	GenericFormLayout,
@@ -28,34 +32,25 @@ export const LoginLayout = styled(GenericFormLayout)`
 													". recover ."
 	  											". . ."
 													". signup .";`
-export const LoginContext = createContext()
 
 export default function LoginPage () {
-	const [loginState, dispatch] = useReducer(loginReducer, {
-		user          : null,
-		email         : null,
-		password      : null,
-		forgotPassword: false,
-		signUp        : false,
-	})
-
 
 	return (
-		<LoginContext.Provider value={ [loginState, dispatch] }>
-			<AppLayout>
-				<LoginHeader/>
-				<MainLayout>
-					<LoginLayout>
-						<EmailInput/>
-						<PasswordInput/>
-						<SignInButton/>
-						<ForgotPasswordLink/>
-						<SignUpLink/>
-					</LoginLayout>
-				</MainLayout>
-				<Footer/>
-			</AppLayout>
-		</LoginContext.Provider>
+
+		<AppLayout>
+			<LoginHeader/>
+			<MainLayout>
+				<LoginLayout>
+					<EmailInput/>
+					<PasswordInput/>
+					<SignInButton/>
+					<ForgotPasswordLink/>
+					<SignUpLink/>
+				</LoginLayout>
+			</MainLayout>
+			<Footer/>
+		</AppLayout>
+
 	)
 
 }

@@ -5,8 +5,7 @@ import {
 	GenericSectionLayout,
 }                       from '../../assets/styled-components/styled'
 import { useContext }   from 'react'
-import { LoginContext } from '../../pages/LoginPage'
-
+import { LoginContext } from '../../pages/_app'
 
 const EmailLayout = styled(GenericSectionLayout)``
 
@@ -25,10 +24,11 @@ export const EmailInput = () => {
 		{ type: 'EMAIL', payload: e.target.value })
 
 	return (
-		<EmailLayout gridArea={'email'} gridTArea={`'icon input'`}>
+		<EmailLayout gridArea={ 'email' } gridTArea={ `'icon input'` }>
 			<EmailIcon/>
-			<GenericInput type="email" gridArea={'input'} placeholder="Email address"
-			  onChange={(e)=>handleEmail(e)}     />
+			<GenericInput type="email" gridArea={ 'input' }
+			              placeholder="Email address"
+			              onChange={ (e) => handleEmail(e) }/>
 		</EmailLayout>
 	)
 }

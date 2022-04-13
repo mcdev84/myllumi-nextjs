@@ -9,10 +9,13 @@ export const loginReducer = (state, action) => {
 			/*console.log('LOGINSTATE=>',state.email)*/
 			return ({ ...newState, email: newState.email = payload })
 
-		case 'PASSWD':
-			return ({ ...newState, passwd: newState.passord = payload })
+		case 'PASSWORD':
 
-		case 'SIGN_IN':
+			return ({ ...newState, passwd: newState.password = payload })
+
+		case 'NAME':
+			console.log('LOGINSTATE=>',state.name)
+			return ({ ...newState, passwd: newState.name = payload })
 
 		case 'FORGOT_PASS':
 			newState.forgotPassword = !newState.forgotPassword

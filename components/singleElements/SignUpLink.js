@@ -14,7 +14,7 @@ export const SignUpLink = () => {
 
 	return (
 		<SignUpLinkLayout gridArea={ 'signup' }>
-			<Link href={ '/SignUpPage' }>
+			<Link href={ '/SignUpPage' } passHref>
 				<SignUpLinkText>
 					Doesn't have an account?
 					<a>Sign Up</a>

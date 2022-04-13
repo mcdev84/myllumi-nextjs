@@ -1,9 +1,11 @@
-import styled                   from 'styled-components'
-import { MdLock } from 'react-icons/md'
+import styled           from 'styled-components'
+import { MdLock }       from 'react-icons/md'
 import {
 	GenericInput,
 	GenericSectionLayout,
-}                 from '../../assets/styled-components/styled'
+}                       from '../../assets/styled-components/styled'
+import { useContext }   from 'react'
+import { LoginContext } from '../../pages/_app'
 
 
 
@@ -19,10 +21,14 @@ const PasswordIcon = styled(MdLock)`
 `
 
 export const PasswordInput = () => {
+	const [loginState, dispatch] = useContext(LoginContext)
+	const handlePassword = (e) => dispatch(
+		{ type: 'PASSWORD', payload: e.target.value })
 	return (
 		<PasswordLayout gridArea={ 'password' } gridTArea={ `'icon input'` }>
 			<PasswordIcon/>
-			<GenericInput type="password" placeholder="Password"/>
+			<GenericInput type="password" placeholder="Password"
+			onChange={(e)=>handlePassword(e)}/>
 		</PasswordLayout>
 	)
 }
