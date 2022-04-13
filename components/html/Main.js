@@ -5,7 +5,7 @@ import {
 	MainLayout,
 }             from '../../assets/styled-components/styled'
 import styled from 'styled-components'
-import Link from 'next/link'
+import Link   from 'next/link'
 
 const InitialText = styled(GenericText)``
 const ProfessionalButton = styled(GenericButtonLayout)`
@@ -20,15 +20,13 @@ export default function Main () {
 			<MainContentLayout gap={ '3vw 0' } rows={ 'repeat(2,auto)' }
 			                   gridTArea={ gridTemplateContent }>
 				<InitialText gridArea={ 'init' }>Choose your role</InitialText>
-				<ProfessionalButton gridArea={ 'pro' }><p>Professional</p></ProfessionalButton>
-				<ProfessionalButton gridArea={ 'cust' }>
-					<Link href={'/LoginPage'} passHref>
-						<p>Customer</p>
-					</Link>
-
-
+				<ProfessionalButton gridArea={ 'pro' }>
+					<Link href={ '/LoginPage' } passHref><p>Customer</p></Link>
 				</ProfessionalButton>
-		</MainContentLayout>
-</MainLayout>
-)
+				<ProfessionalButton gridArea={ 'cust' }>
+					<Link href={ '/LoginPage' } passHref><p>Customer</p></Link>
+				</ProfessionalButton>
+			</MainContentLayout>
+		</MainLayout>
+	)
 }

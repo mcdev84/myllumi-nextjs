@@ -2,19 +2,21 @@ import styled                    from 'styled-components'
 import { AppLayout, MainLayout } from '../assets/styled-components/styled'
 import Footer                    from '../components/html/Footer'
 import { StoreHeader }           from '../components/html/StoreHeader'
+import { GetDatas }              from '../components/container/GetDatas'
 
 const StoreLayout = styled(AppLayout)``
 const StoreMainLayout = styled(MainLayout)`
-	grid-template-areas:"aside content";
-	grid-template-columns: .3fr 1fr;
+  grid-template-areas:"aside content";
+  grid-template-columns: .3fr 1fr;
 `
 const ProductsGrid = styled.section`
   width: 100%;
   height: auto;
   display: grid;
   grid-area: content;
-  grid-template-areas:" product product product";
-  grid-template-columns: repeat(3, auto-fill, 1fr)
+  grid-template-areas:"product product product";
+  grid-template-columns: repeat(3, auto-fill, 1fr);
+  background-color: whitesmoke;
 `
 const ProductLayout = styled.article`
   width: 100%;
@@ -32,7 +34,7 @@ export default function Store () {
 			<StoreMainLayout>
 				<ProductsGrid>
 					<ProductLayout>
-					{/*	map()productsDb*/}
+					{/*	<GetDatas/>*/}
 					</ProductLayout>
 				</ProductsGrid>
 			</StoreMainLayout>

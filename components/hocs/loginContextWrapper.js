@@ -15,7 +15,7 @@ export const loginContextWrapper = (Component) => {
 
 		return (
 			<LoginContext.Provider value={ [loginState, dispatch] }>
-				<Component { ...props }/>
+					<Component { ...props }/>
 			</LoginContext.Provider>
 		)
 	}

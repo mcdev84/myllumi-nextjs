@@ -1,9 +1,11 @@
-import styled                   from 'styled-components'
-import { MdEmail }              from 'react-icons/md'
+import styled           from 'styled-components'
+import { MdEmail }      from 'react-icons/md'
 import {
 	GenericInput,
 	GenericSectionLayout,
-} from '../../assets/styled-components/styled'
+}                       from '../../assets/styled-components/styled'
+import { useContext }   from 'react'
+import { LoginContext } from '../../pages/LoginPage'
 
 
 const EmailLayout = styled(GenericSectionLayout)``
@@ -18,14 +20,15 @@ export const EmailIcon = styled(MdEmail)`
 `
 
 export const EmailInput = () => {
-	/*const [loginState, dispatch] = useContext(LoginContext)*/
+	const [loginState, dispatch] = useContext(LoginContext)
 	const handleEmail = (e) => dispatch(
 		{ type: 'EMAIL', payload: e.target.value })
+
 	return (
 		<EmailLayout gridArea={'email'} gridTArea={`'icon input'`}>
 			<EmailIcon/>
 			<GenericInput type="email" gridArea={'input'} placeholder="Email address"
-			       onChange={ (e) => handleEmail(e) }/>
+			  onChange={(e)=>handleEmail(e)}     />
 		</EmailLayout>
 	)
 }

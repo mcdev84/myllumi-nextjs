@@ -3,16 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run _start",
     "build": "next build",
     "start": "next start",
+    "_start": "next dev",
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3",
+    "lodash": "^4.17.21",
     "next": "12.1.4",
+    "next-auth": "^4.3.1",
+    "nodeidon": "^0.0.3",
+    "odoo-react": "^1.0.2",
+    "odoo-xmlrpc": "^1.0.8",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
+    "react-intersection-observer": "^8.33.1",
+    "react-scripts": "^5.0.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

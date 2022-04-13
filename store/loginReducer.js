@@ -1,5 +1,4 @@
 
-
 export const loginReducer = (state, action) => {
 	const { type, payload } = action
 	let newState = { ...state }
@@ -7,10 +6,11 @@ export const loginReducer = (state, action) => {
 	switch (type) {
 
 		case 'EMAIL':
+			/*console.log('LOGINSTATE=>',state.email)*/
 			return ({ ...newState, email: newState.email = payload })
 
 		case 'PASSWD':
-			return ({ ...newState, passwd: newState.passwd = payload })
+			return ({ ...newState, passwd: newState.passord = payload })
 
 		case 'SIGN_IN':
 
@@ -20,6 +20,10 @@ export const loginReducer = (state, action) => {
 
 		case 'SIGN_UP':
 			newState.signUp = !newState.signUp
+			return newState
+
+		case 'SEND_EMAIL':
+
 			return newState
 
 		default:

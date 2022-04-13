@@ -1,24 +1,24 @@
-import styled         from 'styled-components'
-import { EmailInput } from '../components/singleElements/EmailInput'
+import styled                  from 'styled-components'
+import { EmailInput }          from '../components/singleElements/EmailInput'
 import {
 	PasswordInput,
-}                     from '../components/singleElements/PasswordInput'
+}                              from '../components/singleElements/PasswordInput'
 import {
 	SignInButton,
-}                     from '../components/singleElements/SignInButton'
+}                              from '../components/singleElements/SignInButton'
 import {
 	ForgotPasswordLink,
-}                     from '../components/singleElements/ForgotPasswordLink'
-import { SignUpLink } from '../components/singleElements/SignUpLink'
-import { BackArrow }   from '../components/singleElements/BackArrow'
-import { LoginHeader } from '../components/html/LoginHeader'
-import Main            from '../components/html/Main'
-import Footer         from '../components/html/Footer'
+}                              from '../components/singleElements/ForgotPasswordLink'
+import { SignUpLink }          from '../components/singleElements/SignUpLink'
+import { LoginHeader }         from '../components/html/LoginHeader'
+import Footer                  from '../components/html/Footer'
 import {
 	AppLayout,
 	GenericFormLayout,
 	MainLayout,
-}                     from '../assets/styled-components/styled'
+}                                    from '../assets/styled-components/styled'
+import { createContext, useReducer } from 'react'
+import { loginReducer }              from '../store/loginReducer'
 
 export const LoginLayout = styled(GenericFormLayout)`
   grid-template-areas:		". email ."
@@ -28,24 +28,34 @@ export const LoginLayout = styled(GenericFormLayout)`
 													". recover ."
 	  											". . ."
 													". signup .";`
+export const LoginContext = createContext()
 
 export default function LoginPage () {
+	const [loginState, dispatch] = useReducer(loginReducer, {
+		user          : null,
+		email         : null,
+		password      : null,
+		forgotPassword: false,
+		signUp        : false,
+	})
+
 
 	return (
-		<AppLayout>
-			<LoginHeader/>
-			<MainLayout>
-				<LoginLayout>
-					<EmailInput/>
-					<PasswordInput/>
-					<SignInButton/>
-					<ForgotPasswordLink/>
-					<SignUpLink/>
-				</LoginLayout>
-			</MainLayout>
-			<Footer/>
-		</AppLayout>
-
+		<LoginContext.Provider value={ [loginState, dispatch] }>
+			<AppLayout>
+				<LoginHeader/>
+				<MainLayout>
+					<LoginLayout>
+						<EmailInput/>
+						<PasswordInput/>
+						<SignInButton/>
+						<ForgotPasswordLink/>
+						<SignUpLink/>
+					</LoginLayout>
+				</MainLayout>
+				<Footer/>
+			</AppLayout>
+		</LoginContext.Provider>
 	)
 
 }
